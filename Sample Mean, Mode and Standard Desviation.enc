@@ -1,0 +1,180 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 22,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "what do you want to do?\n",
+      "\n",
+      "\n",
+      "Press 1 for calculate the Sample mean\n",
+      "Press 2 for calculate the mode\n",
+      "Press 3 for calculate the standard desviation\n",
+      "4\n",
+      "Error use only 1, 2 or 3\n"
+     ]
+    }
+   ],
+   "source": [
+    "#initial part\n",
+    "from math import sqrt\n",
+    "t1=0\n",
+    "list1=[]\n",
+    "list2=[]\n",
+    "t2=0 \n",
+    "s=0\n",
+    "sd=0\n",
+    "rep=0\n",
+    "c=[]\n",
+    "print(\"what do you want to do?\\n\\n\")\n",
+    "option= int(input(\"Press 1 for calculate the Sample mean\\nPress 2 for calculate the mode\\nPress 3 for calculate the standard desviation\\n\"))\n",
+    "\n",
+    "#first part\n",
+    "if option==1:\n",
+    "    n= int(input(\"Number of data to be entered: \"))\n",
+    "    for cy in range (0,n):\n",
+    "        v= float(input(\"insert values :\"))\n",
+    "        list1.append(v)\n",
+    "        t1 += v\n",
+    "        tt=t1/n\n",
+    "    print(f\"Sample mean is equal: {tt}\")\n",
+    "    #second part\n",
+    "elif option==2:\n",
+    "    n2=int(input(\"Number of data to be entered: \"))\n",
+    "    for cy in range(0,n2):\n",
+    "        v2=float(input(\"insert values: \"))\n",
+    "        c.append(v2)\n",
+    "        \n",
+    "        for cy in c:\n",
+    "            apa= c.count(cy)\n",
+    "            if apa> rep:\n",
+    "                rep= apa\n",
+    "        mode=[]\n",
+    "        for cy in c:\n",
+    "            apa=c.count(cy)\n",
+    "            if apa== rep and cy not in mode:\n",
+    "                mode.append(cy)\n",
+    "    if len(mode) != len(c):\n",
+    "        print(f\"Mode is equal: {mode}\")\n",
+    "    else:  \n",
+    "        print(\"there is not mode\")\n",
+    "        \n",
+    "        #third part\n",
+    "elif option==3:\n",
+    "    n3= int(input(\"how many data do you need \"))\n",
+    "    for cy in range (0,n3):\n",
+    "        v3= float(input(\"insert values :\"))\n",
+    "        list2.append(v3)\n",
+    "        t2 += v3\n",
+    "        tt2= t2/n3\n",
+    "        s += (v3-tt2)**2\n",
+    "        sd=sqrt(s/(n3-1))\n",
+    "    print(f\"Standard desviation is equal:  {sd}\")\n",
+    "    #final part\n",
+    "else:\n",
+    "    print(\"Error use only 1, 2 or 3\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 23,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "In the initial part, we send the sqrt tool to be able to perform the square root operation in the third part, then we declare the variables to be used, in the end we print a message to the user to select an option between 1, 2 or 3, if the user chooses one other than those 3 options, the program will automatically go to the final part and send the message Error only use only 1, 2 or 3.\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(\"In the initial part, we send the sqrt tool to be able to perform the square root operation in the third part, then we declare the variables to be used, in the end we print a message to the user to select an option between 1, 2 or 3, if the user chooses one other than those 3 options, the program will automatically go to the final part and send the message Error only use only 1, 2 or 3.\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 24,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "If the user presses 1 the program will execute the first part, where the user will be asked how much data he will enter, then a for cycle will be performed to ask the user to enter the data and these are saved in a list with the data limit given by the user, to this data the established operations will be carried out and in the end the result will be printed to the user\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(\"If the user presses 1 the program will execute the first part, where the user will be asked how much data he will enter, then a for cycle will be performed to ask the user to enter the data and these are saved in a list with the data limit given by the user, to this data the established operations will be carried out and in the end the result will be printed to the user\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 28,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "If the user presses 2 the second part of the program is executed, here a cycle like the one in the first part is requested to request data from the user, then a series of operations are carried out to oppose the mode of the data entered by the user, if there is no fashion the program prints there is not mode\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(\"If the user presses 2 the second part of the program is executed, here a cycle like the one in the first part is requested to request data from the user, then a series of operations are carried out to oppose the mode of the data entered by the user, if there is no fashion the program prints there is not mode\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 29,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "If the user presses 3 the third part of the program is executed, here a cycle such as that of the first and second part is requested to request data from the user, then a series of operations are performed to obtain the Standard deviation of the data entered by the user, at the end the result is printed\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(\"If the user presses 3 the third part of the program is executed, here a cycle such as that of the first and second part is requested to request data from the user, then a series of operations are performed to obtain the Standard deviation of the data entered by the user, at the end the result is printed\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.7.3"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}
