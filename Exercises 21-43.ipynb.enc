@@ -1,0 +1,273 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Function Can Return Something\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "The principal fuction es create any formule like addition,subtraction,multiplying but in this case anybody can create its own formule."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Let's do some math with just functions!\n",
+      "ADDING 30 + 5 * 5\n",
+      "SUBTRACTING 78 - 4\n",
+      "MULTIPLYING 90 * 2\n",
+      "Age: 55, Height: 74, Weight: 180\n",
+      "SUBTRACTING 55 - 2\n",
+      "MULTIPLYING 180 * 53\n",
+      "SUBTRACTING 74 - 9540\n",
+      "ADDING 55 + -9466 * -9466\n",
+      "Which is the result 89605211\n"
+     ]
+    }
+   ],
+   "source": [
+    "def add(a, b): \n",
+    "  print(f\"ADDING {a} + {b} * {b}\") \n",
+    "  return a + b * b\n",
+    "\n",
+    "def subtract(a, b): \n",
+    "  print(f\"SUBTRACTING {a} - {b}\") \n",
+    "  return a - b\n",
+    " \n",
+    "def multiply(a, b): \n",
+    "  print(f\"MULTIPLYING {a} * {b}\") \n",
+    "  return a * b\n",
+    "\n",
+    " \n",
+    "print(\"Let's do some math with just functions!\")\n",
+    " \n",
+    "age = add(30, 5) \n",
+    "height = subtract(78, 4) \n",
+    "weight = multiply(90, 2) \n",
+    " \n",
+    "print(f\"Age: {age}, Height: {height}, Weight: {weight}\")\n",
+    " \n",
+    "what = add(age, subtract(height, multiply(weight, subtract(age, 2))))\n",
+    "\n",
+    "print(\"Which is the result\", what)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Is-A, Has-A,Objects , and Classes"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "How to call to other variables with functions"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 19,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "War is inminent\n"
+     ]
+    }
+   ],
+   "source": [
+    "\n",
+    "mystuff = {'tokio': \"War is inminent\"}\n",
+    "print(mystuff['tokio'])\n",
+    " "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "And showing a example about how can be used in simple code"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "You have to get eggs, vegetal oil and salt\n",
+      "You put the oil in a pan\n",
+      "Wait until the oil put hot\n",
+      "Put the eggs and the salt\n",
+      "Call to Twisted Sister and singing Huevos con Aceite\n"
+     ]
+    }
+   ],
+   "source": [
+    "class Recipe(object):\n",
+    "\n",
+    "    def __init__(self, recipe): \n",
+    "        self.recipe = recipe\n",
+    " \n",
+    "    def tell_me_a_joke(self): \n",
+    "        for line in self.recipe: \n",
+    "            print(line)\n",
+    "\n",
+    "Start_ss = Recipe([\"You have to get eggs, vegetal oil and salt\", \n",
+    "                     \"You put the oil in a pan\", \n",
+    "                      \"Wait until the oil put hot\"])\n",
+    "\n",
+    "End_ss = Recipe([\"Put the eggs and the salt\", \n",
+    "                           \"Call to Twisted Sister and singing Huevos con Aceite\"])\n",
+    "\n",
+    "Start_ss.tell_me_a_joke()\n",
+    "\n",
+    "End_ss.tell_me_a_joke()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Learning to Speak Object-Oriented"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 33,
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "IndentationError",
+     "evalue": "unindent does not match any outer indentation level (<tokenize>, line 25)",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[1;36m  File \u001b[1;32m\"<tokenize>\"\u001b[1;36m, line \u001b[1;32m25\u001b[0m\n\u001b[1;33m    self.pet = None\u001b[0m\n\u001b[1;37m    ^\u001b[0m\n\u001b[1;31mIndentationError\u001b[0m\u001b[1;31m:\u001b[0m unindent does not match any outer indentation level\n"
+     ]
+    }
+   ],
+   "source": [
+    " ## Animal is-a object (yes, sort of confusing) look at the extra credit 2 class Animal(object): 3 pass\n",
+    " \n",
+    "      ## ?? \n",
+    "    class Dog(Animal):\n",
+    "\n",
+    "    def __init__(self, name): \n",
+    "     ## ?? \n",
+    "     self.name = name\n",
+    " \n",
+    "   ## ?? \n",
+    "    class Cat(Animal):\n",
+    " \n",
+    "    def __init__(self, name): \n",
+    "       ## ?? \n",
+    "         self.name = name\n",
+    "     ## ?? \n",
+    "    class Person(object):\n",
+    "\n",
+    "    def __init__(self, name): \n",
+    "        ## ?? \n",
+    "         self.name = name\n",
+    " \n",
+    " ## Person has-a pet of some kind\n",
+    "\n",
+    "     self.pet = None\n",
+    "\n",
+    "     ## ?? \n",
+    "    class Employee(Person):\n",
+    " \n",
+    "      def __init__(self, name, salary): \n",
+    "        ## ?? hmm what is this strange magic? \n",
+    "        super(Employee, self).__init__(name) \n",
+    "        ## ??  \n",
+    "        self.salary = salary\n",
+    " \n",
+    "       ## ?? \n",
+    "     class Fish(object): \n",
+    "            pass\n",
+    " \n",
+    "       ## ?? \n",
+    "    class Salmon(Fish): \n",
+    "          pass\n",
+    "\n",
+    "       ## ?? \n",
+    "     class Halibut(Fish): \n",
+    "            pass\n",
+    " \n",
+    "\n",
+    " ## rover is-a Dog \n",
+    "    rover = Dog(\"Rover\")\n",
+    " \n",
+    " ## ?? \n",
+    "satan = Cat(\"Satan\")\n",
+    "\n",
+    " ## ??\n",
+    "mary = Person(\"Mary\")\n",
+    " \n",
+    " ## ??\n",
+    "mary.pet = satan\n",
+    " ## ?? \n",
+    "frank = Employee(\"Frank\", 120000)\n",
+    "\n",
+    "## ?? \n",
+    "frank.pet = rover\n",
+    " \n",
+    "## ?? \n",
+    "flipper = Fish()\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    " In this you can create a code where the program give a name of the pets and what kind of thing these are"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.7.4"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}
